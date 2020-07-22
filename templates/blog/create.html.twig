@@ -1,0 +1,26 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+
+{{ form_start(form) }}
+{{ form_row(form.title , { 'attr':{'placeholder': "Titre de l'article"}})}}
+{{ form_row(form.category)}}
+{{ form_row(form.content , { 'attr':{'placeholder': "Contenu de l'article"}})}}
+{{ form_row(form.image , { 'attr':{'placeholder': "Image de l'article"}})}}
+<button type="submit" class="btn btn-success">
+{% if modeEdit %}
+Enregistrer
+{% else %}
+    Ajouter
+
+{% endif %}
+</button>
+{{ form_end(form) }}
+
+
+
+
+{% endblock %}
